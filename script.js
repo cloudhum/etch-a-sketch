@@ -6,19 +6,26 @@ function createDivs(num){
         container.appendChild(div);
     }
 }
-createDivs(256);
+//createDivs(256);//
+createDivs(4096);
 
 //get squares
 const squares = document.querySelectorAll('.square');
 console.log(squares);
 
-//add eventlisteners
+//add event listeners for each square/div
 squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
         square.style.backgroundColor = "lavender";
     });
 });
 
-//get button
+function capturePrompt() {
+    let input = prompt('Enter grid size:');
+    console.log(input);
+}
+
+//grab button and add event listener
 const selectGridSizeBtn = document.querySelector('.grid-select');
-selectGridSizeBtn.addEventListener('click', () => prompt("Enter grid size"))
+selectGridSizeBtn.addEventListener('click', capturePrompt);
+
