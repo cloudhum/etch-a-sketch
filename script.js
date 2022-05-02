@@ -7,13 +7,18 @@ function createDivs(num){
     }
 }
 createDivs(256);
-//add eventlisteners 
+
+//get squares
 const squares = document.querySelectorAll('.square');
 console.log(squares);
 
+//add eventlisteners
 squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = "black";
+        square.style.backgroundColor = "lavender";
     });
 });
 
+//get button
+const selectGridSizeBtn = document.querySelector('.grid-select');
+selectGridSizeBtn.addEventListener('click', () => prompt("Enter grid size"))
